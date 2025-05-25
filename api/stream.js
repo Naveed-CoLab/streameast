@@ -19,9 +19,9 @@ export default async function handler(req, res) {
     $("html").css("overflow", "auto");
 
     res.setHeader("Content-Type", "text/html");
-    return res.status(200).send($.html());
+    res.status(200).send($.html());
   } catch (error) {
     console.error("Error:", error.message);
-    return res.status(500).send("<h1>⚠️ Unable to load stream</h1>");
+    res.status(500).send("<h1>⚠️ Unable to load stream</h1>");
   }
 }
